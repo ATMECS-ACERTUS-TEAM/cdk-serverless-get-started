@@ -34,6 +34,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+
+      - name: Install CDK
+        run: npm install -g aws-cdk
         
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
