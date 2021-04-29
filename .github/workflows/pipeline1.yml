@@ -45,7 +45,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{secrets.AWS_REGION}}
-          aws-account: ${{secrets.AWS_ACCOUNT}}
           #role-to-assume: ${{secrets.AWS_ROLE_TO_ASSUME}}
           #role-external-id: ${{ secrets.AWS_ROLE_EXTERNAL_ID }}
           #role-duration-seconds: 1200
@@ -56,7 +55,7 @@ jobs:
           npm i
           npm run build
           cdk synth
-          cdk bootstrap aws://aws-account/aws-region
+          cdk bootstrap aws://${{secrets.AWS_ACCOUNT}}/${{secrets.AWS_REGION}}
           cdk deploy CdkServerlessGetStartedStack ---require-approval never
           #cdk deploy --app ./cdk.out --require-approval never "*"
           #cdk destroy
