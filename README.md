@@ -1,11 +1,12 @@
 # Welcome to your CDK TypeScript project! MY change
 
 You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`CdkServerlessGetStartedStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
-
+which contains a Lambda function which is exposed using an API
+gateway through which we can access the website defined in lambda function
+Also created a sample Dynamodb if lambda function wants to save something in the database. For this run , database will be empty.
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
-## Useful commands my change
+## Useful commands
 
  * `npm run build`   compile typescript to js
  * `npm run watch`   watch for changes and compile
