@@ -2,7 +2,7 @@ exports.handler = async function (event) {
   console.log("request:", JSON.stringify(event));
 
   // return response back to upstream caller
-  return sendRes(200, "HELLLOOO");
+  return sendRes(200, "HELLLOOO this is my sample html webpage");
 };
 
 const sendRes = (status, body) => {

@@ -8,8 +8,8 @@ export class CdkServerlessGetStartedStack extends cdk.Stack {
     super(scope, id, props);
 
     //Dynamodb table definition
-    const table = new dynamodb.Table(this, "Hello", {
-      partitionKey: { name: "name", type: dynamodb.AttributeType.STRING },
+    const table = new dynamodb.Table(this, "Order_details", {
+      partitionKey: { name: "Order_id", type: dynamodb.AttributeType.STRING },
     });
 
     // lambda function
@@ -26,10 +26,10 @@ export class CdkServerlessGetStartedStack extends cdk.Stack {
     table.grantReadWriteData(dynamoLambda);
 
     // create the API Gateway with one method and path
-    const api = new apigw.RestApi(this, "hello-api");
+    const api = new apigw.RestApi(this, "firstcdk-api");
 
     api.root
-      .resourceForPath("hello")
+      .resourceForPath("app1")
       .addMethod("GET", new apigw.LambdaIntegration(dynamoLambda));
 
     new cdk.CfnOutput(this, "HTTP API URL", {
