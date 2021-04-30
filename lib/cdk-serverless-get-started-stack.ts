@@ -25,7 +25,7 @@ export class CdkServerlessGetStartedStack extends cdk.Stack {
     // permissions to lambda to dynamo table
     table.grantReadWriteData(dynamoLambda);
 
-    // create the API Gateway with one method and path
+    // create the API Gateway with one method and path will be available
     const api = new apigw.RestApi(this, "firstcdk-api");
 
     api.root
