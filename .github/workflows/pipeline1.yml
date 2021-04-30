@@ -50,8 +50,8 @@ jobs:
         
       - name: Deploy CDK
         run: |
-          #npm i
-          #npm run build
+          npm i
+          npm run build
           #cdk synth
           #cdk bootstrap
           #cdk deploy CdkServerlessGetStartedStack ---require-approval never
