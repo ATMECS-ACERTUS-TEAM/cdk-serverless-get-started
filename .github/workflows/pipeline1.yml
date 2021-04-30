@@ -11,8 +11,6 @@ name: CI
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
 jobs:
   Cleanup: 
@@ -52,10 +50,10 @@ jobs:
         
       - name: Deploy CDK
         run: |
-          npm i
-          npm run build
-          cdk synth
-          cdk bootstrap
-          cdk deploy CdkServerlessGetStartedStack ---require-approval never
+          #npm i
+          #npm run build
+          #cdk synth
+          #cdk bootstrap
+          #cdk deploy CdkServerlessGetStartedStack ---require-approval never
           #cdk deploy --app ./cdk.out --require-approval never "*"
-          #cdk destroy
+          cdk destroy
