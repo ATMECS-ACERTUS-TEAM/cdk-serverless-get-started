@@ -52,8 +52,8 @@ jobs:
         run: |
           npm i
           npm run build
-          #cdk synth
-          #cdk bootstrap
-          #cdk deploy CdkServerlessGetStartedStack ---require-approval never
+          cdk synth
+          cdk bootstrap
+          cdk deploy CdkServerlessGetStartedStack ---require-approval never
           #cdk deploy --app ./cdk.out --require-approval never "*"
-          cdk destroy --require-approval never
+          #cdk destroy --require-approval never
